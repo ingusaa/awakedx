@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWAKEDX.COM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .player-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        .player-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .movie-card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+        .blur-bg {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black shadow-lg border-b border-red-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fas fa-film text-red-700 text-3xl"></i>
+                <span class="text-2xl font-bold text-red-700">
+                    AWAKEDX.COM
+                </span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-300 hover:text-red-700 font-medium transition-all duration-300 hover:scale-105">
+                    <i class="fas fa-home mr-1"></i> Начало
+                </a>
+                <a href="movie.html" class="text-white hover:text-red-700 font-medium transition-all duration-300 hover:scale-105">
+                    <i class="fas fa-film mr-1"></i> Филми
+                </a>
+                <a href="seriali.html" class="text-white hover:text-red-700 font-medium transition-all duration-300 hover:scale-105">
+                    <i class="fas fa-tv mr-1"></i> Сериали
+                </a>
+                <a href="latest.html" class="text-white hover:text-red-700 font-medium transition-all duration-300 hover:scale-105">
+                    <i class="fas fa-clock mr-1"></i> Наскоро добавени
+                </a>
+            </div>
+            <div class="flex items-center">
+                <button id="mobile-menu-button" class="md:hidden p-2 text-white hover:text-red-400">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black border-t border-gray-800">
+            <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+                <a href="index.html" class="text-gray-300 hover:text-red-700 font-medium transition-all duration-300">
+                    <i class="fas fa-home mr-2"></i> Начало
+                </a>
+                <a href="movie.html" class="text-white hover:text-red-700 font-medium transition-all duration-300">
+                    <i class="fas fa-film mr-2"></i> Филми
+                </a>
+                <a href="seriali.html" class="text-white hover:text-red-700 font-medium transition-all duration-300">
+                    <i class="fas fa-tv mr-2"></i> Сериали
+                </a>
+                <a href="latest.html" class="text-white hover:text-red-700 font-medium transition-all duration-300">
+                    <i class="fas fa-clock mr-2"></i> Наскоро добавени
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-16 pb-10 min-h-screen flex items-center justify-center">
+        <!-- Featured Movie Section -->
+        <section class="container mx-auto px-4 py-8 flex justify-center">
+            <div class="flex flex-col w-full max-w-4xl">
+                <!-- Player Section -->
+                <div class="w-full">
+                    <h1 class="text-2xl md:text-3xl font-bold mb-4">Капитан Америка: Първият отмъстител</h1>
+                    <div class="rounded-lg overflow-hidden shadow-lg shadow-black/50">
+                        <div class="player-container">
+                            <iframe src="https://filemoon.sx/e/qis4vq7cmamu" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    
+                    <!-- Movie Info -->
+                    <div class="mt-6">
+                        <div class="flex items-center gap-4 mb-4">
+                            <span class="text-green-500 font-medium">БГ Аудио</span>
+                            <span class="text-gray-400">2011</span>
+                            <span class="border border-gray-700 px-2 py-0.5 text-xs rounded text-gray-300">HD</span>
+                        </div>
+                        <p class="text-gray-400">
+                            Смелият, все още кротък млад войник Стив Роджърс се записва като доброволец в серия от експерименти за програмата Супер Войник на американската армия. Военните успяват да го превърнат в човешко оръжие, но решават, че самата програма е прекалено скъпа, за да рискуват с обекта, като го вкарат в битка. Вместо това, решават да използват Стив като своя знаменитост и да парадират с него през Европа, за да повдига морала на американските войски, обличайки го в специален костюм.
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        
+    </main>
+
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                // Toggle between bars and times icon
+                const icon = this.querySelector('i');
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                }
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mobileMenu.contains(event.target) && 
+                    event.target !== mobileMenuButton && 
+                    !mobileMenuButton.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+            
+            // Example: Add click event to movie cards
+            const movieCards = document.querySelectorAll('.movie-card');
+            movieCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // In a real app, this would load the selected movie
+                    alert('Loading movie...');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
