@@ -7,17 +7,22 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .line-clamp-2 {
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
+        .player-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
             overflow: hidden;
         }
-        .movie-title {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 100%;
+        .player-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .movie-card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
         }
         .blur-bg {
             background: rgba(0, 0, 0, 0.7);
@@ -75,68 +80,35 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="pt-16 pb-10 min-h-screen">
-        <div class="container mx-auto px-4">
-            <!-- Movie Row -->
-            <div class="mb-8 mt-6">
-                <h2 class="text-xl font-bold mb-4">ФАЗА 1</h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                    <!-- Movie Card 1 -->
-                    <div class="movie-card cursor-pointer relative" onclick="window.location.href='ironman2008.html'">
-                        <img src="https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_FMjpg_UX1000_.jpg" 
-                             alt="Железният човек" 
-                             class="w-full h-64 object-cover rounded-lg">
-                        <span class="absolute top-1 left-1 bg-black bg-opacity-70 px-1 py-0.5 rounded text-white-500 text-xs font-bold">🔊БГ АУДИО</span>
-                        <span class="absolute top-1 right-1 bg-black bg-opacity-70 px-1 py-0.5 rounded text-white text-xs font-bold">2008</span>
-                        <p class="text-center mt-2 font-medium movie-title">Железният човек</p>
+    <main class="pt-16 pb-10 min-h-screen flex items-center justify-center">
+        <!-- Featured Movie Section -->
+        <section class="container mx-auto px-4 py-8 flex justify-center">
+            <div class="flex flex-col w-full max-w-4xl">
+                <!-- Player Section -->
+                <div class="w-full">
+                    <h1 class="text-2xl md:text-3xl font-bold mb-4">Железният човек</h1>
+                    <div class="rounded-lg overflow-hidden shadow-lg shadow-black/50">
+                        <div class="player-container">
+                            <iframe src="https://filemoon.sx/e/dg9p2l1m53ja/Iron_Man_2008_720p_BluRay_x264-KiNGS" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="640" height="360" allowfullscreen></iframe>
+                        </div>
                     </div>
-                    <div class="movie-card cursor-pointer relative" onclick="window.location.href='ironman2008.html'">
-                        <img src="https://m.media-amazon.com/images/M/MV5BMTUyNzk3MjA1OF5BMl5BanBnXkFtZTcwMTE1Njg2MQ@@._V1_FMjpg_UX1000_.jpg" 
-                             alt="Железният човек" 
-                             class="w-full h-64 object-cover rounded-lg">
-                        <span class="absolute top-1 left-1 bg-black bg-opacity-70 px-1 py-0.5 rounded text-white-500 text-xs font-bold">🔊БГ АУДИО</span>
-                        <span class="absolute top-1 right-1 bg-black bg-opacity-70 px-1 py-0.5 rounded text-white text-xs font-bold">2008</span>
-                        <p class="text-center mt-2 font-medium movie-title">Невероятният Хълк</p>
+                    
+                    <!-- Movie Info -->
+                    <div class="mt-6">
+                        <div class="flex items-center gap-4 mb-4">
+                            <span class="text-green-500 font-medium">БГ Аудио</span>
+                            <span class="text-gray-400">2011</span>
+                            <span class="border border-gray-700 px-2 py-0.5 text-xs rounded text-gray-300">HD</span>
+                        </div>
+                        <p class="text-gray-400">
+                            Тони Старк/Железния човек е отвлечен и принуден да построи унищожително оръжие. Вместо това, използвайки интелигентността и изобретателността си, Тони конструира високотехнологичен железен костюм и успява да се освободи. Малко след това милиардерът разкрива глобална конспирация и решава да използва мощната си броня, за да защити света като Железния човек.
+                        </p>
                     </div>
-                    <div class="movie-card cursor-pointer relative" onclick="window.location.href='ironman2008.html'">
-                        <img src="https://m.media-amazon.com/images/M/MV5BYWYyOGQzOGYtMGQ1My00ZWYxLTgzZjktZWYzN2IwYjkxYzM0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" 
-                             alt="Железният човек" 
-                             class="w-full h-64 object-cover rounded-lg">
-                        <span class="absolute top-1 left-1 bg-black bg-opacity-70 px-1 py-0.5 rounded text-white-500 text-xs font-bold">🔊БГ АУДИО</span>
-                        <span class="absolute top-1 right-1 bg-black bg-opacity-70 px-1 py-0.5 rounded text-white text-xs font-bold">2010</span>
-                        <p class="text-center mt-2 font-medium movie-title">Железният човек 2</p>
-                    </div>
-                    <div class="movie-card cursor-pointer relative" onclick="window.location.href='ironman2008.html'">
-                        <img src="https://m.media-amazon.com/images/M/MV5BNjRhNGZjZjEtYTQzYS00OWUxLThjNGEtMTIwMTE2ZDFlZTZkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" 
-                             alt="Железният човек" 
-                             class="w-full h-64 object-cover rounded-lg">
-                        <span class="absolute top-1 left-1 bg-black bg-opacity-70 px-1 py-0.5 rounded text-white-500 text-xs font-bold">🔊БГ АУДИО</span>
-                        <span class="absolute top-1 right-1 bg-black bg-opacity-70 px-1 py-0.5 rounded text-white text-xs font-bold">2011</span>
-                        <p class="text-center mt-2 font-medium movie-title">Тор: Богът на гръмотевиците</p>
-                    </div>
-                    <div class="movie-card cursor-pointer relative" onclick="window.location.href='capitanamerica2011.html'">
-                        <img src="https://m.media-amazon.com/images/M/MV5BNzUyM2YyY2MtNzNlMS00MWU5LTgxNjAtNzZlNmI2NjU2NDZlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
-                             alt="Железният човек" 
-                             class="w-full h-64 object-cover rounded-lg">
-                        <span class="absolute top-1 left-1 bg-black bg-opacity-70 px-1 py-0.5 rounded text-white-500 text-xs font-bold">🔊БГ АУДИО</span>
-                        <span class="absolute top-1 right-1 bg-black bg-opacity-70 px-1 py-0.5 rounded text-white text-xs font-bold">2011</span>
-                        <p class="text-center mt-2 font-medium movie-title">Капитан Америка: Първият отмъстител</p>
-                    </div>
-                    <div class="movie-card cursor-pointer relative" onclick="window.location.href='ironman2008.html'">
-                        <img src="https://m.media-amazon.com/images/M/MV5BNGE0YTVjNzUtNzJjOS00NGNlLTgxMzctZTY4YTE1Y2Y1ZTU4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
-                             alt="Железният човек" 
-                             class="w-full h-64 object-cover rounded-lg">
-                        <span class="absolute top-1 left-1 bg-black bg-opacity-70 px-1 py-0.5 rounded text-white-500 text-xs font-bold">🔊БГ АУДИО</span>
-                        <span class="absolute top-1 right-1 bg-black bg-opacity-70 px-1 py-0.5 rounded text-white text-xs font-bold">2012</span>
-                        <p class="text-center mt-2 font-medium movie-title">Първите отмъстители на Marvel</p>
-                    </div>
-            <!-- Movie Row -->
-            <div class="mb-8 mt-6">
-                <h2 class="text-xl font-bold mb-4">ФАЗА 2</h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
                 </div>
+                
             </div>
-        </div>
+        </section>
+        
     </main>
 
     <script>
@@ -170,6 +142,14 @@
                 }
             });
             
+            // Example: Add click event to movie cards
+            const movieCards = document.querySelectorAll('.movie-card');
+            movieCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // In a real app, this would load the selected movie
+                    alert('Loading movie...');
+                });
+            });
         });
     </script>
 </body>
