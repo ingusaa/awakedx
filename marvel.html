@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWAKEDX.COM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .movie-title {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+        .blur-bg {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black shadow-lg border-b border-red-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fas fa-film text-red-700 text-3xl"></i>
+                <span class="text-2xl font-bold text-red-700">
+                    AWAKEDX.COM
+                </span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-300 hover:text-red-700 font-medium transition-all duration-300 hover:scale-105">
+                    <i class="fas fa-home mr-1"></i> Начало
+                </a>
+                <a href="movie.html" class="text-white hover:text-red-700 font-medium transition-all duration-300 hover:scale-105">
+                    <i class="fas fa-film mr-1"></i> Филми
+                </a>
+                <a href="seriali.html" class="text-white hover:text-red-700 font-medium transition-all duration-300 hover:scale-105">
+                    <i class="fas fa-tv mr-1"></i> Сериали
+                </a>
+                <a href="latest.html" class="text-white hover:text-red-700 font-medium transition-all duration-300 hover:scale-105">
+                    <i class="fas fa-clock mr-1"></i> Наскоро добавени
+                </a>
+            </div>
+            <div class="flex items-center">
+                <button id="mobile-menu-button" class="md:hidden p-2 text-white hover:text-red-400">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black border-t border-gray-800">
+            <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+                <a href="index.html" class="text-gray-300 hover:text-red-700 font-medium transition-all duration-300">
+                    <i class="fas fa-home mr-2"></i> Начало
+                </a>
+                <a href="movie.html" class="text-white hover:text-red-700 font-medium transition-all duration-300">
+                    <i class="fas fa-film mr-2"></i> Филми
+                </a>
+                <a href="seriali.html" class="text-white hover:text-red-700 font-medium transition-all duration-300">
+                    <i class="fas fa-tv mr-2"></i> Сериали
+                </a>
+                <a href="latest.html" class="text-white hover:text-red-700 font-medium transition-all duration-300">
+                    <i class="fas fa-clock mr-2"></i> Наскоро добавени
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-16 pb-10 min-h-screen">
+        <div class="container mx-auto px-4">
+            <!-- Movie Row -->
+            <div class="mb-8 mt-6">
+                <h2 class="text-xl font-bold mb-4">ВСИЧКИ MARVEL ФИЛМИ</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <!-- Movie Card 1 -->
+                    <div class="movie-card cursor-pointer relative" onclick="window.location.href='ironman2008.html'">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_FMjpg_UX1000_.jpg" 
+                             alt="Железният човек" 
+                             class="w-full rounded-lg">
+                        <span class="absolute top-1 left-1 bg-black bg-opacity-70 px-1 py-0.5 rounded text-white-500 text-xs font-bold">🔊БГ АУДИО</span>
+                        <span class="absolute top-1 right-1 bg-black bg-opacity-70 px-1 py-0.5 rounded text-white text-xs font-bold">2008</span>
+                        <p class="text-center mt-2 font-medium movie-title">Железният човек</p>
+                    </div>
+                    <div class="movie-card cursor-pointer relative" onclick="window.location.href='hulk2008.html'">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMTUyNzk3MjA1OF5BMl5BanBnXkFtZTcwMTE1Njg2MQ@@._V1_FMjpg_UX1000_.jpg" 
+                             alt="Железният човек" 
+                             class="w-full rounded-lg">
+                        <span class="absolute top-1 left-1 bg-black bg-opacity-70 px-1 py-0.5 rounded text-white-500 text-xs font-bold">🔊БГ АУДИО</span>
+                        <span class="absolute top-1 right-1 bg-black bg-opacity-70 px-1 py-0.5 rounded text-white text-xs font-bold">2008</span>
+                        <p class="text-center mt-2 font-medium movie-title">Невероятният Хълк</p>
+                    </div>
+                    <div class="movie-card cursor-pointer relative" onclick="window.location.href='ironman2010.html'">
+                        <img src="https://m.media-amazon.com/images/M/MV5BYWYyOGQzOGYtMGQ1My00ZWYxLTgzZjktZWYzN2IwYjkxYzM0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" 
+                             alt="Железният човек" 
+                             class="w-full rounded-lg">
+                        <span class="absolute top-1 left-1 bg-black bg-opacity-70 px-1 py-0.5 rounded text-white-500 text-xs font-bold">🔊БГ АУДИО</span>
+                        <span class="absolute top-1 right-1 bg-black bg-opacity-70 px-1 py-0.5 rounded text-white text-xs font-bold">2010</span>
+                        <p class="text-center mt-2 font-medium movie-title">Железният човек 2</p>
+                    </div>
+                    <div class="movie-card cursor-pointer relative" onclick="window.location.href='tor2011.html'">
+                        <img src="https://m.media-amazon.com/images/M/MV5BNjRhNGZjZjEtYTQzYS00OWUxLThjNGEtMTIwMTE2ZDFlZTZkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" 
+                             alt="Железният човек" 
+                             class="w-full rounded-lg">
+                        <span class="absolute top-1 left-1 bg-black bg-opacity-70 px-1 py-0.5 rounded text-white-500 text-xs font-bold">🔊БГ АУДИО</span>
+                        <span class="absolute top-1 right-1 bg-black bg-opacity-70 px-1 py-0.5 rounded text-white text-xs font-bold">2011</span>
+                        <p class="text-center mt-2 font-medium movie-title">Тор: Богът на гръмотевиците</p>
+                    </div>
+                    <div class="movie-card cursor-pointer relative" onclick="window.location.href='capitanamerica2011.html'">
+                        <img src="https://m.media-amazon.com/images/M/MV5BNzUyM2YyY2MtNzNlMS00MWU5LTgxNjAtNzZlNmI2NjU2NDZlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                             alt="Железният човек" 
+                             class="w-full rounded-lg">
+                        <span class="absolute top-1 left-1 bg-black bg-opacity-70 px-1 py-0.5 rounded text-white-500 text-xs font-bold">🔊БГ АУДИО</span>
+                        <span class="absolute top-1 right-1 bg-black bg-opacity-70 px-1 py-0.5 rounded text-white text-xs font-bold">2011</span>
+                        <p class="text-center mt-2 font-medium movie-title">Капитан Америка: Първият отмъстител</p>
+                    </div>
+                    <div class="movie-card cursor-pointer relative" onclick="window.location.href='avengers2012.html'">
+                        <img src="https://m.media-amazon.com/images/M/MV5BNGE0YTVjNzUtNzJjOS00NGNlLTgxMzctZTY4YTE1Y2Y1ZTU4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                             alt="Железният човек" 
+                             class="w-full rounded-lg">
+                        <span class="absolute top-1 left-1 bg-black bg-opacity-70 px-1 py-0.5 rounded text-white-500 text-xs font-bold">🔊БГ АУДИО</span>
+                        <span class="absolute top-1 right-1 bg-black bg-opacity-70 px-1 py-0.5 rounded text-white text-xs font-bold">2012</span>
+                        <p class="text-center mt-2 font-medium movie-title">Първите отмъстители на Marvel</p>
+                    </div>
+            <!-- Movie Row -->
+            <div class="mb-8 mt-6">
+                <h2 class="text-xl font-bold mb-4">ФАЗА 2</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                // Toggle between bars and times icon
+                const icon = this.querySelector('i');
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                }
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mobileMenu.contains(event.target) && 
+                    event.target !== mobileMenuButton && 
+                    !mobileMenuButton.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+            
+        });
+    </script>
+</body>
+</html>
